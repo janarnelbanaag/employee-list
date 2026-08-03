@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build: ./employee-list-fe
+    volumes:
+      - employee-list-fe-modules:/app/node_modules
+      - ./:/app
+    ports:
+      - "3000:3000"
+volumes:
+  employee-list-fe-modules:
