@@ -6,5 +6,13 @@ services:
       - ./employee-list-fe/:/app
     ports:
       - "5173:5173"
+  backend:
+    build: ./employee-list-be
+    volumes:
+      - employee-list-be-modules:/app/node_modules
+      - ./employee-list-be/:/app
+    ports:
+      - "3000:3000"
 volumes:
   employee-list-fe-modules:
+  employee-list-be-modules:
