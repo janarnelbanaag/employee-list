@@ -1,9 +1,14 @@
-import express, { type Express, type Request, type Response } from 'express';
+import express, { type Express } from 'express';
+import employees from './routes/employees.routes.ts'
+import { errorHandler } from './middleware/errorHandler.ts';
 
 const app: Express = express();
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World! xd');
-});
+// middlewares
+app.use(express.json())
+
+app.use('/api/employee', employees);
+
+app.use(errorHandler)
 
 app.listen(3000);
