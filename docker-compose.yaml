@@ -13,6 +13,20 @@ services:
       - ./employee-list-be/:/app
     ports:
       - "3000:3000"
+    env_file:
+      - ./employee-list-be/.env
+  db:
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=employees
+    volumes:
+      - employee-db:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    attach: false
 volumes:
   employee-list-fe-modules:
   employee-list-be-modules:
+  employee-db:
