@@ -24,7 +24,7 @@ services:
     volumes:
       - employee-db:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - "5432:5432"
     attach: false
 volumes:
   employee-list-fe-modules:

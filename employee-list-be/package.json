@@ -5,7 +5,10 @@
   "author": "Jan Arnel Banaag",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch src/app.ts",
+    "test": "jest",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/app.js"
   },
   "dependencies": {
     "express": "^5.2.1",
